@@ -67,14 +67,14 @@ mkdir /etc/xray
 mkdir /var/lib/premium-script;
 mkdir /var/lib/crot-script;
 clear
-echo '============================================='
-echo "Sila Masukkan DOMAIN, Jika TIADA KLIK Enter"
-echo '============================================='
-read -p "Hostname / Domain: " host
-echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
-echo "IP=$host" >> /var/lib/crot-script/ipvps.conf
-echo "$host" >> /etc/v2ray/domain
-clear
+echo -e  "${RED}Checking VPS Domain${NC}"
+if [ -f "/etc/v2ray/domain" ]; then
+echo "Script Already Installed!!"
+exit 0
+fi
+mkdir /var/lib/premium-script;
+echo "IP=" >> /var/lib/premium-script/ipvps.conf
+wget https://vpnkuy.site/v2ray/cf.sh && chmod +x cf.sh && ./cf.sh
 echo '============================================='
 echo '        Installing SSH & OPENVPN '
 echo '============================================='
