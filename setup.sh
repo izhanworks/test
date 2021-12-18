@@ -74,7 +74,7 @@ exit 0
 fi
 mkdir /var/lib/premium-script;
 echo "IP=" >> /var/lib/premium-script/ipvps.conf
-wget https://vpnkuy.site/v2ray/cf.sh && chmod +x cf.sh && ./cf.sh
+wget https://raw.githubusercontent.com/Sangarya/test/main/cf.sh && chmod +x cf.sh && ./cf.sh
 echo '============================================='
 echo '        Installing SSH & OPENVPN '
 echo '============================================='
